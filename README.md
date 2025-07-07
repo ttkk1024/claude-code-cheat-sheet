@@ -10,7 +10,7 @@ After testing Claude Code extensively, I've developed this comprehensive cheat s
 
 ```bash
 # Install Claude Code
-curl -sL https://install.anthropic.com | sh
+npm install -g @anthropic-ai/claude-code
 
 # Launch interactive REPL
 claude
