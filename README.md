@@ -1,4 +1,4 @@
-# Claude Code Cheat Sheet (Note : 60% Tested WIP)
+# Claude Code Cheat Sheet (Beta)
 
 ![Alt text](images/claude-code-cheat-sheet.png)
 
@@ -9,6 +9,10 @@ After testing Claude Code extensively, I've developed this comprehensive cheat s
 ## Quick Start
 
 ```bash
+
+# Windows users
+wsl
+
 # Install Claude Code
 npm install -g @anthropic-ai/claude-code
 
@@ -44,7 +48,7 @@ curl -sL https://install.anthropic.com | sh
 claude
 
 # Start with initial prompt
-claude "explain this project"
+claude "summarize this project"
 
 # Check version
 claude --version
@@ -195,7 +199,7 @@ MCP and advanced integrations
 
 ```bash
 # Configure MCP servers
-claude mcp
+claude --mcp
 
 # MCP server management (via slash commands)
 /mcp                      # Access MCP functionality
@@ -302,6 +306,164 @@ claude -p "suggest improvements" | \
 claude -p "create implementation plan"
 ```
 
+---
+
+## 🟤 Level 7: Workflow Automation
+
+Advanced automation patterns and multi-step processes
+
+### Automated Code Review Workflows
+
+```bash
+# Automated PR review process
+#!/bin/bash
+git diff HEAD~1 | claude -p "review this PR for security issues" > security_review.md
+git diff HEAD~1 | claude -p "check for performance issues" > performance_review.md
+git diff HEAD~1 | claude -p "suggest improvements" > improvements.md
+```
+
+### Continuous Integration Integration
+
+```bash
+# CI/CD pipeline integration
+claude -p "analyze test coverage" --output-format json | jq '.coverage_percentage'
+claude -p "generate release notes from commits" --max-turns 2 > RELEASE_NOTES.md
+```
+
+### Batch Processing Workflows
+
+```bash
+# Process multiple files
+find . -name "*.js" -exec claude -p "analyze this file for bugs: {}" \; > bug_report.txt
+
+# Automated documentation generation
+for file in src/*.py; do
+    claude -p "generate docstring for $file" --output-format text >> docs.md
+done
+```
+
+---
+
+## ⚫ Level 8: Integration & Ecosystem
+
+IDE integrations, Git workflows, and third-party tool connections
+
+### IDE Integration Commands
+
+```bash
+# VS Code integration
+/ide vscode                # Configure VS Code integration
+/ide configure             # Setup IDE configurations
+
+# Custom IDE commands
+claude --ide-mode "explain selected code"
+claude --ide-mode "refactor this function"
+```
+
+### Git Workflow Integration
+
+```bash
+# Git hooks integration
+claude -p "create pre-commit hook for code quality" > .git/hooks/pre-commit
+
+# Advanced Git operations
+git log --oneline -10 | claude -p "create changelog from these commits"
+git diff --name-only | claude -p "explain what changed in this commit"
+```
+
+### Third-Party Tool Connections
+
+```bash
+# Database integration
+mysql -e "SHOW TABLES" | claude -p "analyze database structure"
+
+# Docker integration
+docker ps | claude -p "analyze running containers"
+docker logs container_name | claude -p "find errors in logs"
+```
+
+---
+
+## ⚪ Level 9: Performance & Optimization
+
+Advanced performance tuning, resource management, and efficiency tips
+
+### Memory & Resource Management
+
+```bash
+# Optimize memory usage
+claude -p --max-turns 1 "quick analysis"      # Single turn for efficiency
+claude -p --compact-mode "analyze with minimal context"
+
+# Resource monitoring
+/cos                       # Check current session costs
+/doctor --performance      # Performance diagnostics
+```
+
+### Caching & Optimization
+
+```bash
+# Efficient session reuse
+claude -c "continue previous analysis"         # Reuse existing context
+claude --cache-results "repetitive task"      # Cache common operations
+
+# Parallel processing
+claude -p "task 1" & claude -p "task 2" & wait  # Parallel execution
+```
+
+### Large-Scale Processing
+
+```bash
+# Handle large codebases efficiently
+claude --add-dir . --max-context 50000 "analyze entire project"
+claude --stream-output "process large dataset" | head -100
+```
+
+---
+
+## 🔘 Level 10: Enterprise & Production
+
+Production-ready configurations, team workflows, and enterprise features
+
+### Team Collaboration
+
+```bash
+# Shared team configurations
+claude --config-file team-config.json "standardized analysis"
+
+# Team session sharing
+claude -r "team-session-id" "continue team discussion"
+```
+
+### Production Environment Setup
+
+```bash
+# Production-ready configuration
+claude --production-mode \
+       --security-enabled \
+       --audit-logging \
+       --max-turns 10 \
+       "production analysis"
+```
+
+### Enterprise Security
+
+```bash
+# Security-focused operations
+claude --disallowedTools "Bash(rm:*)" "Bash(sudo:*)" "Bash(chmod:*)" \
+       --audit-mode \
+       --no-external-calls \
+       "secure code review"
+```
+
+### Monitoring & Compliance
+
+```bash
+# Audit and compliance
+claude --audit-log /var/log/claude-audit.log "compliance check"
+claude --compliance-mode "analyze for security compliance"
+```
+
 ## Command Reference Tables
 
 ### CLI Commands
@@ -378,6 +540,92 @@ claude -p "create implementation plan"
 - Pipe commands for complex workflows
 - Use session IDs for long-running tasks
 
+## Best Practices by Level
+
+### Beginner Best Practices (Levels 1-3)
+
+- Start with basic commands and gradually progress
+- Use `/help` frequently to discover new features
+- Practice with simple queries before complex ones
+- Keep sessions focused with `/clear` between tasks
+
+### Intermediate Best Practices (Levels 4-6)
+
+- Master tool permissions for security
+- Use JSON output for automation scripts
+- Learn MCP for advanced integrations
+- Create custom slash commands for repeated tasks
+
+### Advanced Best Practices (Levels 7-10)
+
+- Implement automated workflows for repetitive tasks
+- Use enterprise features for team collaboration
+- Monitor performance and optimize resource usage
+- Follow security best practices in production
+
+## Pro Tips & Tricks
+
+### Efficiency Tips
+
+- Use `Ctrl+C` to cancel long-running operations
+- Combine multiple flags for complex configurations
+- Use piping for multi-step data processing
+- Cache common operations for better performance
+
+### Security Pro Tips
+
+- Always use `--disallowedTools` for dangerous commands
+- Enable audit logging in production environments
+- Review tool permissions regularly
+- Use `--security-enabled` for sensitive operations
+
+### Workflow Pro Tips
+
+- Create templates for common automation patterns
+- Use session IDs for long-running collaborative tasks
+- Implement proper error handling in automation scripts
+- Document custom workflows for team sharing
+
+## Troubleshooting Common Issues
+
+### Installation Issues
+
+```bash
+# Check installation
+claude --version
+claude /doctor
+
+# Reinstall if needed
+npm uninstall -g @anthropic-ai/claude-code
+npm install -g @anthropic-ai/claude-code
+```
+
+### Performance Issues
+
+```bash
+# Clear context for better performance
+/clear
+
+# Limit context size
+claude -p --max-turns 3 "focused query"
+
+# Use compact mode
+/compact "keep only essentials"
+```
+
+### Permission Issues
+
+```bash
+# Check current permissions
+claude --list-permissions
+
+# Reset permissions
+claude --reset-permissions
+
+# Configure specific permissions
+claude --allowedTools "Bash(git:*)" --disallowedTools "Bash(rm:*)"
+```
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see the Claude Code documentation for guidelines.
@@ -396,9 +644,20 @@ This cheat sheet is provided under the MIT License.
 ## ⭐ Support
 
 If this cheat sheet helped you, please share it with other developers!
+If this cheat sheet helped you master Claude Code, please:
 
-## Resources
+- ⭐ Star our GitHub repository
+- 📢 Share it with other developers
+- 💬 Leave feedback in the comments
+- 🔄 Follow for updates
 
-For more Claude Code resources, visit the official Anthropic documentation at [https://docs.anthropic.com/en/docs/claude-code]
+## Resources & Further Learning
+
+For more Claude Code resources, visit the official Anthropic documentation at
+
+- [Official Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+- [Claude Code GitHub Repository](https://github.com/anthropic-ai/claude-code)
+- [Anthropic API Documentation](https://docs.anthropic.com)
+- [MCP Documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp)
 
 **Last updated**: July 2025
