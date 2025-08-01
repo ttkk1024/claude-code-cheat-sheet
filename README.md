@@ -31,9 +31,14 @@ claude --version
 - 🔴 **Level 4: Expert Commands**
 - 🔵 **Level 5: Power User Commands**
 - 🟣 **Level 6: Master Commands**
-- 🤖 **[Claude Code Subagents](Claude%20Code%20Subagents.md)** - Specialized AI agents for specific development tasks
 - 🤝 **Contributing**
 - 📄 **License**
+
+### Pages
+
+- 🤖 **[Subagents](subagents.md)** - Specialized AI agents for specific development tasks
+
+---
 
 ## 🟢 Level 1: Basic Commands
 
