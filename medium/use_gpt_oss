@@ -7,6 +7,7 @@ translating API calls and responses between the two different formats.
 
 Author: Joe Njenga
 Purpose: Enable Claude Code to work with local Ollama models (specifically GPT-OSS)
+Article : https://medium.com/@joe.njenga/how-i-tricked-claude-code-to-use-gpt-oss-the-new-openai-model-it-worked-5b7ee0483c22
 License: MIT
 
 Key Features:
