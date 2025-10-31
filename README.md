@@ -4,10 +4,10 @@
 ![Alt text](images/claude-code-cheat-sheet.png)
 
 > **Your complete guide to mastering Claude Code - from zero to hero in minutes!**
-> **掌握Clause Code的完整手册 - 从小白速成大牛**
+> **掌握Claude Code的完整手册 - 从小白速成大牛**
 
 After testing Claude Code extensively, I've developed this comprehensive cheat sheet that will take you from basic to advanced user without wasting time. Whether you're completely new to Claude Code or looking to master advanced features, this guide has you covered.
-经过重度测试Claude Code之后，我完成了全面的简明手册来帮助你在很短的时间之内，完成从初级用户到高级用户的转变。
+经过重度测试Claude Code之后，我完成了全面的简明手册来帮助你在很短的时间之内，完成从初级用户到高级用户的转变。无论你是Claude Code的新手还是想要掌握高级功能，本指南都能满足你的需求。
 ## Quick Start
 ## 快速启动
 ```bash
@@ -209,8 +209,8 @@ claude --dangerously-skip-permissions
 ### 斜杠命令 - 会话管理
 
 ```bash
-/compact [instructions]   # Summarize conversation with optional instructions使用可选指令摘要会话
-/clear                    # Reset conversation history and context重置会话历史和上下文
+/compact [instructions]   # Summarize conversation with optional instructions 使用可选指令摘要会话
+/clear                    # Reset conversation history and context 重置会话历史和上下文
 /exit                     # Exit the REPL 退出REPL
 /help                     # Show available commands 显示有效命令
 /config                   # Open configuration panel 打开配置面板
@@ -236,7 +236,7 @@ MCP和高级集成
 # Configure MCP servers 配置MCP服务器
 claude --mcp
 
-# MCP server management (via slash commands)MCP服务管理（经由斜杠命令）
+# MCP server management (via slash commands) MCP服务管理（经由斜杠命令）
 /mcp                      # Access MCP functionality 访问MCP的基本功能
 ```
 
@@ -261,7 +261,7 @@ claude -p "analyze code" --output-format json
 # Stream JSON for real-time processing 针对实时处理的流式JSON
 claude -p "large task" --output-format stream-json
 
-# Batch processing批处理
+# Batch processing 批处理
 claude -p --max-turns 1 "quick query"
 ```
 
@@ -442,7 +442,7 @@ Advanced performance tuning, resource management, and efficiency tips
 
 ```bash
 # Optimize memory usage 优化内存使用
-claude -p --max-turns 1 "quick analysis"      # Single turn for efficiency针对效率单个转换
+claude -p --max-turns 1 "quick analysis"      # Single turn for efficiency 针对效率单个转换
 claude -p --compact-mode "analyze with minimal context"
 
 # Resource monitoring 资源监控
@@ -474,10 +474,10 @@ claude --stream-output "process large dataset" | head -100
 ---
 
 ## 🔘 Level 10: Enterprise & Production
-## 🔘 等级 10: 企业级和生成级
+## 🔘 等级 10: 企业级和生产级
 
 Production-ready configurations, team workflows, and enterprise features
-生成级别准备的配置，团体工作流 ，和企业特性
+生成级别准备的配置，团体工作流，和企业特性
 
 ### Team Collaboration
 ### 团队合作
@@ -688,31 +688,36 @@ claude --allowedTools "Bash(git:*)" --disallowedTools "Bash(rm:*)"
 ## 🤝 Contributing
 
 We welcome contributions! Please see the Claude Code documentation for guidelines.
+我们欢迎贡献！请查看Claude Code文档以获取指导。
 
 ### Ways to Contribute
 
-- 🐛 Report bugs or issues
-- 📝 Improve documentation
-- ✨ Add new command examples
-- 🔧 Test commands and report results
+- 🐛 Report bugs or issues 报告错误或问题
+- 📝 Improve documentation 改进文档
+- ✨ Add new command examples 添加新的命令示例
+- 🔧 Test commands and report results 测试命令并报告结果
 
 ## 📄 License
 
 This cheat sheet is provided under the MIT License.
+本简明手册在MIT许可证下提供。
 
 ## ⭐ Support
 
 If this cheat sheet helped you, please share it with other developers!
+如果这个简明手册帮助了你，请分享给其他开发者！
 If this cheat sheet helped you master Claude Code, please:
+如果这个简明手册帮助你掌握了Claude Code，请：
 
-- ⭐ Star our GitHub repository
-- 📢 Share it with other developers
-- 💬 Leave feedback in the comments
-- 🔄 Follow for updates
+- ⭐ Star our GitHub repository ⭐ 在GitHub上给我们加星
+- 📢 Share it with other developers 📢 与其他开发者分享
+- 💬 Leave feedback in the comments 💬 在评论中留下反馈
+- 🔄 Follow for updates 🔄 关注更新
 
 ## Resources & Further Learning
 
 For more Claude Code resources, visit the official Anthropic documentation at
+更多Claude Code资源，请访问官方Anthropic文档：
 
 - [Official Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [Claude Code GitHub Repository](https://github.com/anthropic-ai/claude-code)
@@ -720,3 +725,4 @@ For more Claude Code resources, visit the official Anthropic documentation at
 - [MCP Documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp)
 
 **Last updated**: July 2025
+**最后更新**: 2025年7月
