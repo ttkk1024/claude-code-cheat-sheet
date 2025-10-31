@@ -1,25 +1,27 @@
 # Claude Code Cheat Sheet (Beta)
+# Claude Code 简明手册
 
 ![Alt text](images/claude-code-cheat-sheet.png)
 
 > **Your complete guide to mastering Claude Code - from zero to hero in minutes!**
+> **掌握Clause Code的完整手册 - 从小白速成大牛**
 
 After testing Claude Code extensively, I've developed this comprehensive cheat sheet that will take you from basic to advanced user without wasting time. Whether you're completely new to Claude Code or looking to master advanced features, this guide has you covered.
-
+经过重度测试Claude Code之后，我完成了全面的简明手册来帮助你在很短的时间之内，完成从初级用户到高级用户的转变。
 ## Quick Start
-
+## 快速启动
 ```bash
 
-# Windows users
+# Windows users Windows用户
 wsl
 
-# Install Claude Code
+# Install Claude Code 安装Claude
 npm install -g @anthropic-ai/claude-code
 
-# Launch interactive REPL
+# Launch interactive REPL 启动交互式REPL
 claude
 
-# Check version
+# Check version 检查版本
 claude --version
 ```
 
